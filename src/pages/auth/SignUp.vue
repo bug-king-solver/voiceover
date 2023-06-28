@@ -1,8 +1,8 @@
 <template>
   <div class="q-pa-md items-start q-gutter-md">
     <q-card class="my-card">
-      <q-card-section class="bg-primary text-white">
-        <div class="text-h6">SIGN UP</div>
+      <q-card-section class="bg-white text-white">
+        <div class="text-h6 text-black">SIGN UP</div>
       </q-card-section>
       <q-separator />
       <div class="q-pa-md">

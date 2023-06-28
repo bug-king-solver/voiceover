@@ -32,6 +32,7 @@
           :error="vuelidate.lastname.$error"
           @blur="vuelidate.lastname.$touch"
           label="Enter your last name *"
+          hide-bottom-space
         />
       </div>
       <!-- END: Your First Name and Last Name -->
@@ -44,6 +45,7 @@
           :error="vuelidate.gender.$error"
           @blur="vuelidate.gender.$touch"
           :options="genderList"
+          hide-bottom-space
         />
       </div>
       <!-- END: Gender -->
@@ -107,6 +109,7 @@
           @blur="vuelidate.country.$touch"
           :options="countryList"
           label="Select your native country *"
+          hide-bottom-space
         />
       </div>
       <!-- END: Native Country -->
@@ -120,6 +123,7 @@
           @blur="vuelidate.language.$touch"
           :options="languageList"
           label="Select your primary language *"
+          hide-bottom-space
         />
       </div>
       <!-- END: Primary Language -->
@@ -131,7 +135,7 @@
           label="Continue"
           :disabled="vuelidate.$invalid"
         />
-        <q-btn flat @click="setPage(2)" color="grey" label="Back" />
+        <q-btn @click="setPage(2)" color="grey" label="Back" class="q-ml-sm" />
       </q-stepper-navigation>
       <!-- END: Next and Back Button Group -->
     </q-form>
