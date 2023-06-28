@@ -16,7 +16,7 @@
             <q-radio v-model="role" label="Artist" val="artist" />
           </div>
         </div>
-        <div class="row justify-end">
+        <div class="row justify-end q-mt-lg">
           <router-link to="/signup">
             <q-btn label="Next" color="primary" />
           </router-link>
