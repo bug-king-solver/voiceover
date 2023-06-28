@@ -7,17 +7,19 @@
       <q-separator />
       <div class="q-pa-md">
         <div class="row">
-          <div class="col">
-            <p>I am a Client, hiring a project</p>
+          <div class="col" align="center">
+            <h4>I am a Client, hiring a project</h4>
             <q-radio v-model="role" label="Client" val="client" />
           </div>
-          <div class="col">
-            <p>I am a Artist, looking for work</p>
+          <div class="col" align="center">
+            <h4>I am a Artist, looking for work</h4>
             <q-radio v-model="role" label="Artist" val="artist" />
           </div>
         </div>
-        <div class="">
-          <q-btn label="Next" color="primary" />
+        <div class="row justify-end q-mt-lg">
+          <router-link to="/signup">
+            <q-btn label="Next" color="primary" />
+          </router-link>
         </div>
       </div>
     </q-card>
@@ -28,7 +30,7 @@
 import { ref } from "vue";
 export default {
   setup() {
-    const role = ref("");
+    const role = ref("artist");
     return {
       role,
     };

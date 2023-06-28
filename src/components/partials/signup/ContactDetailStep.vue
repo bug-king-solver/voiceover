@@ -14,6 +14,7 @@
         @blur="vuelidate.residence.$touch"
         :options="countryList"
         label="Select your residence country *"
+        hide-bottom-space
       />
     </div>
     <!-- END: Residence Country -->
@@ -25,6 +26,7 @@
         v-model="vuelidate.address.$model"
         :error="vuelidate.address.$error"
         @blur="vuelidate.address.$touch"
+        hide-bottom-space
       />
     </div>
     <!-- END: Address Panel -->
@@ -37,6 +39,7 @@
           v-model="vuelidate.city.$model"
           :error="vuelidate.city.$error"
           @blur="vuelidate.city.$touch"
+          hide-bottom-space
         />
       </div>
       <div class="col q-mt-sm">
@@ -46,6 +49,7 @@
           v-model="vuelidate.state.$model"
           :error="vuelidate.state.$error"
           @blur="vuelidate.state.$touch"
+          hide-bottom-space
         />
       </div>
     </div>
@@ -59,11 +63,18 @@
           v-model="vuelidate.postcode.$model"
           :error="vuelidate.postcode.$error"
           @blur="vuelidate.postcode.$touch"
+          hide-bottom-space
         />
       </div>
       <div class="col q-mt-sm">
         <custom-label :role="'country'" :desc="'Country'" />
-        <q-input filled v-model="vuelidate.residence.$model" disable readonly />
+        <q-input
+          filled
+          v-model="vuelidate.residence.$model"
+          disable
+          readonly
+          hide-bottom-space
+        />
       </div>
     </div>
     <!-- END: PostCode and Country -->
@@ -82,6 +93,7 @@
           v-model="vuelidate.phoneNumber.$model"
           :error="vuelidate.phoneNumber.$error"
           @blur="vuelidate.phoneNumber.$touch"
+          hide-bottom-space
           class="col-7"
         />
       </div>

@@ -80,13 +80,7 @@
           label="Continue"
           :disabled="vuelidate.$invalid"
         />
-        <q-btn
-          flat
-          @click="setPage(1)"
-          color="grey"
-          label="Back"
-          class="q-ml-sm"
-        />
+        <q-btn @click="setPage(1)" color="grey" label="Back" class="q-ml-sm" />
       </q-stepper-navigation>
       <!-- END: Next and Back Button Group -->
     </q-form>
@@ -94,15 +88,15 @@
   <!-- END: Acount Details Section -->
 </template>
 <script>
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 import useVuelidate from "@vuelidate/core";
 import {
   email as emailValidator,
   minLength,
   required,
+  sameAs,
 } from "@vuelidate/validators";
 
-import { useQuasar } from "quasar";
 import CustomLabe from "src/components/common/CustomLabel.vue";
 export default {
   props: {
@@ -114,27 +108,34 @@ export default {
   },
   setup(props) {
     const isPwd = ref(true);
-    const $q = useQuasar();
-    const rules = {
-      email: { required, emailValidator },
-      confirmemail: { required, emailValidator },
-      password: { required, minLength: minLength(8) },
-      confirmpassword: {
-        required,
-        minLength: minLength(8),
-      },
-    };
     const form = reactive({
       email: "",
       confirmemail: "",
       password: "",
       confirmpassword: "",
     });
+    const rules = computed(() => {
+      return {
+        email: { required, emailValidator },
+        confirmemail: {
+          required,
+          emailValidator,
+          sameAsEmail: sameAs(form.email),
+        },
+        password: { required, minLength: minLength(8) },
+        confirmpassword: {
+          required,
+          minLength: minLength(8),
+          sameAsPassword: sameAs(form.password),
+        },
+      };
+    });
     const vuelidate = useVuelidate(rules, form);
     async function validate() {
       return vuelidate.value.$validate();
     }
     async function onNext() {
+      console.log(vuelidate.value);
       try {
         const valid = await validate();
         if (!valid) {
