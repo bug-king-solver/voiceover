@@ -3,11 +3,7 @@
     <q-header elevated class="bg-white">
       <q-toolbar class="justify-between">
         <div class="row items-center">
-          <router-link
-            to="/"
-            class="row items-center q-gutter-x-md"
-            style="text-decoration: none"
-          >
+          <router-link to="/">
             <q-btn class="myBrand">
               <q-avatar size="42px">
                 <img src="../assets/img/blacklogo.png" />
