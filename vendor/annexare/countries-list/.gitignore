@@ -1,0 +1,15 @@
+# OS specific
+.DS_Store
+
+# IDE
+.idea
+*.lock
+
+coverage
+.eslintcache
+.phpunit.cache
+
+composer.phar
+
+# Dependency directory
+node_modules

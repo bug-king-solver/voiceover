@@ -1,0 +1,32 @@
+I need from artist these details
+
+Title
+Name
+Contact number
+Email
+Gender
+Profile image (optional)
+Native Country (country to select)
+Primary Native Language (language list to choose)
+Do you speak and record second language? (If no leave blank) (upload mp3 demo only)
+English Accent Demo (upload mp3 demo only)
+Voiceover style 3 keywords which describe your voice eg friendly, motivational , approachable
+
+Confirm Recording tools:
+Do you have a professional home studio?
+Year of experience in VO industry?
+Can you do audio editing?
+
+Basic Session fee per hour:
+Is your fees negotiable?
+Additional info:
+
+Any social media profile link:
+
+Facebook
+Linked in
+Tiktok
+Youtube
+Soundcloud
+
+Finish:

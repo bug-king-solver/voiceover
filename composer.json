@@ -1,0 +1,5 @@
+{
+    "require": {
+        "annexare/countries-list": "^2.6"
+    }
+}

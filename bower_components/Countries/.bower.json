@@ -1,0 +1,38 @@
+{
+  "name": "Countries",
+  "version": "2.6.1",
+  "homepage": "http://annexare.github.io/Countries/",
+  "author": {
+    "name": "Dmytro",
+    "email": "z@annexare.com",
+    "url": "https://github.com/z-ax"
+  },
+  "description": "Continents & countries: ISO 3166-1 alpha-2 code, name, ISO 639-1 languages, capital, currency, native name, phone. JSON, CSV and SQL.",
+  "keywords": [
+    "country",
+    "countries",
+    "continent",
+    "emoji",
+    "languages",
+    "capital",
+    "currency",
+    "data",
+    "csv",
+    "json",
+    "sql",
+    "ISO 3166-1",
+    "ISO 639-1",
+    "node"
+  ],
+  "license": "MIT",
+  "_release": "2.6.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.6.1",
+    "commit": "47d36a0ec0696758eda5375922bb6633d1929100"
+  },
+  "_source": "https://github.com/annexare/Countries.git",
+  "_target": "^2.6.1",
+  "_originalSource": "countries",
+  "_direct": true
+}

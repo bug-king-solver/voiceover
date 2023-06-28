@@ -1,0 +1,58 @@
+[
+    {
+        "name": "annexare/countries-list",
+        "version": "2.6.1",
+        "version_normalized": "2.6.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/annexare/Countries.git",
+            "reference": "47d36a0ec0696758eda5375922bb6633d1929100"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/annexare/Countries/zipball/47d36a0ec0696758eda5375922bb6633d1929100",
+            "reference": "47d36a0ec0696758eda5375922bb6633d1929100",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^9.5"
+        },
+        "time": "2021-01-12T10:53:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "dist/index.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dmytro",
+                "email": "z@annexare.com",
+                "homepage": "https://github.com/z-ax"
+            }
+        ],
+        "description": "Continents & countries: ISO 3166-1 alpha-2 code, name, ISO 639-1 languages, capital, currency, native name, phone. JSON, CSV and SQL.",
+        "homepage": "http://annexare.github.io/Countries/",
+        "keywords": [
+            "ISO 3166-1",
+            "ISO 639-1",
+            "capital",
+            "continent",
+            "countries",
+            "country",
+            "csv",
+            "currency",
+            "data",
+            "emoji",
+            "json",
+            "languages",
+            "node",
+            "sql"
+        ]
+    }
+]
