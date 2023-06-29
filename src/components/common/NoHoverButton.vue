@@ -12,6 +12,7 @@ export default defineComponent({
 <style scoped>
 .noHover {
   background-color: white;
+  margin: 0 10px;
   border: none;
 }
 .noHover:hover {

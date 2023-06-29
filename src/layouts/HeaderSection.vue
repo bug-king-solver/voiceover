@@ -24,7 +24,7 @@
         </router-link>
       </div>
       <div>
-        <router-link to="/signin">
+        <router-link v-if="!loggedIn" to="/signin">
           <no-hover-button :label="'SIGN IN'" />
         </router-link>
         <router-link to="/presignup">
@@ -35,28 +35,32 @@
   </q-header>
 </template>
 <script>
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 import NoHoverButton from "src/components/common/NoHoverButton.vue";
+import { useAuthStore } from "stores/auth";
+
 export default defineComponent({
   name: "HeaderSection",
   components: {
     NoHoverButton,
   },
   setup() {
-    return {};
+    const authStore = useAuthStore();
+    const loggedIn = computed(() => authStore.loggedIn);
+    // const { loggedIn } = authStore;
+    return {
+      loggedIn,
+    };
   },
 });
 </script>
 
-<style>
+<style scoped>
 .myBrand {
   border: none;
   background-color: white;
 }
 .myBrand:hover {
   cursor: pointer;
-}
-.q-btn .q-focus-helper {
-  display: none;
 }
 </style>

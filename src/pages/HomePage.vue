@@ -24,11 +24,14 @@
 <script>
 import ComplexSearchForm from "src/components/common/ComplexSearchForm.vue";
 import { defineComponent } from "vue";
-import { Language } from "../../bower_components/Countries/dist/index";
+
 export default defineComponent({
   name: "HomePage",
   components: {
     ComplexSearchForm,
+  },
+  setup() {
+    // Option 2: use computed and functions to use the store
   },
 });
 </script>
