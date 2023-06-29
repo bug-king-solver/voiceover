@@ -58,6 +58,8 @@
 import { useQuasar } from "quasar";
 import { ref } from "vue";
 import CustomLabel from "src/components/common/CustomLabel.vue";
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "stores/auth";
 
 export default {
   name: "SignIn",
@@ -71,22 +73,11 @@ export default {
     const isPwd = ref(true);
     const email = ref(null);
     const accept = ref(false);
+    const authStore = useAuthStore();
     function onSubmit() {
-      if (accept.value !== true) {
-        $q.notify({
-          color: "red-5",
-          textColor: "white",
-          icon: "warning",
-          message: "You need to accept the license and terms first",
-        });
-      } else {
-        $q.notify({
-          color: "green-4",
-          textColor: "white",
-          icon: "cloud_done",
-          message: "Submitted",
-        });
-      }
+      // const {loggedIn} = authStore;
+      alert();
+      authStore.login();
     }
     function onReset() {
       email.value = null;
