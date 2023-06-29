@@ -1,10 +1,15 @@
 <template>
-  <q-footer elevated>
+  <q-footer class="bg-white">
     <div class="footer">
       <div class="row">
-        <div class="col">This is logo part.</div>
-        <div class="col">This is contact us part.</div>
-        <div class="col">This is our services part.</div>
+        <div class="col"></div>
+        <div class="col">
+          <div class="text-h5 text-black">Contact Us</div>
+          <div>
+            <q-icon name="fa-solid fa-ambulance" />
+          </div>
+        </div>
+        <div class="col"></div>
         <div class="col">This is our services part.</div>
       </div>
     </div>

@@ -3,51 +3,60 @@
     <q-toolbar class="justify-between">
       <div class="row items-center">
         <router-link to="/">
-          <q-btn class="myBrand">
-            <q-avatar size="42px">
-              <img src="../assets/img/blacklogo.png" />
-            </q-avatar>
-          </q-btn>
+          <button class="myBrand">
+            <img src="../assets/img/blacklogo.png" style="width: 42px" />
+          </button>
         </router-link>
         <router-link to="/our-services">
-          <q-btn flat color="black" label="Our services" class="myButton"
+          <no-hover-button :label="'OUR SERVICES'"
         /></router-link>
         <router-link to="/terms-conditions">
-          <q-btn flat color="black" label="Terms and conditions"
-        /></router-link>
+          <no-hover-button :label="'TERMS AND CONDITIONS'" />
+        </router-link>
         <router-link to="/how-work">
-          <q-btn flat color="black" label="How we work"
-        /></router-link>
+          <no-hover-button :label="'HOW WE WORK'" />
+        </router-link>
         <router-link to="/how-work">
-          <q-btn flat color="black" label="Traslation"
-        /></router-link>
+          <no-hover-button :label="'TRANSLATION'" />
+        </router-link>
         <router-link to="/contact-us">
-          <q-btn flat color="black" label="Contact us"
-        /></router-link>
+          <no-hover-button :label="'CONTACT US'" />
+        </router-link>
       </div>
       <div>
         <router-link to="/signin">
-          <q-btn flat color="black" label="SIGN IN"
-        /></router-link>
+          <no-hover-button :label="'SIGN IN'" />
+        </router-link>
         <router-link to="/presignup">
-          <q-btn flat color="black" label="SIGN UP"
-        /></router-link>
+          <no-hover-button :label="'SIGN UP'" />
+        </router-link>
       </div>
     </q-toolbar>
   </q-header>
 </template>
 <script>
 import { defineComponent } from "vue";
+import NoHoverButton from "src/components/common/NoHoverButton.vue";
 export default defineComponent({
   name: "HeaderSection",
+  components: {
+    NoHoverButton,
+  },
   setup() {
     return {};
   },
 });
 </script>
 
-<style lang="scss" scoped>
-.myBrand:before {
-  box-shadow: none;
+<style>
+.myBrand {
+  border: none;
+  background-color: white;
+}
+.myBrand:hover {
+  cursor: pointer;
+}
+.q-btn .q-focus-helper {
+  display: none;
 }
 </style>
