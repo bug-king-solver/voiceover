@@ -42,6 +42,7 @@
                         v-model="vulidate.firstname.$model"
                         :error="vulidate.firstname.$error"
                         @blur="vulidate.firstname.$touch"
+                        hide-bottom-space
                         label="FirstName *"
                       />
                     </div>
@@ -52,12 +53,13 @@
                         v-model="vulidate.lastname.$model"
                         :error="vulidate.lastname.$error"
                         @blur="vulidate.lastname.$touch"
+                        hide-bottom-space
                         label="LastName *"
                       />
                     </div>
                   </div>
                   <div class="row q-gutter-x-md">
-                    <div class="col">
+                    <div class="col q-mt-sm">
                       <custom-label
                         :role="'companyname'"
                         :desc="'Company name'"
@@ -77,6 +79,7 @@
                         v-model="vulidate.email.$model"
                         :error="vulidate.email.$error"
                         @blur="vulidate.email.$touch"
+                        hide-bottom-space
                         type="email"
                         label="Email *"
                       />
@@ -88,6 +91,7 @@
                         v-model="vulidate.phone.$model"
                         :error="vulidate.phone.$error"
                         @blur="vulidate.phone.$touch"
+                        hide-bottom-space
                         type="tel"
                         label="Phone *"
                       />
@@ -100,6 +104,7 @@
                         filled
                         v-model="vulidate.country.$model"
                         :error="vulidate.country.$error"
+                        hide-bottom-space
                         @blur="vulidate.country.$touch"
                         label="Country *"
                       />
@@ -114,6 +119,7 @@
                         v-model="vulidate.howFind.$model"
                         :error="vulidate.howFind.$error"
                         @blur="vulidate.howFind.$touch"
+                        hide-bottom-space
                         :label="'Please select *'"
                         :options="howFindList"
                       />
@@ -130,6 +136,7 @@
                         v-model="vulidate.questionType.$model"
                         :error="vulidate.questionType.$error"
                         @blur="vulidate.questionType.$touch"
+                        hide-bottom-space
                         :label="'Please select *'"
                         :options="questionTypeList"
                       />
@@ -146,6 +153,7 @@
                         v-model="vulidate.question.$model"
                         :error="vulidate.question.$error"
                         @blur="vulidate.question.$touch"
+                        hide-bottom-space
                         label="Your question... *"
                         type="textarea"
                       />
