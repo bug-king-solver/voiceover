@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-between" style="justify-content: center">
-    <div class="q-mx-sm col-5">
+    <div class="q-mx-sm col-7">
       <select-form
         outlined
         v-model="language"
@@ -9,13 +9,13 @@
         :label="'Select Language/Accent'"
       />
     </div>
-    <div class="q-ml-lg col-5">
+    <div class="q-ml-lg col-3">
       <select-form
         outlined
         :round="true"
         v-model="gender"
         :options="genderList"
-        :label="'Select Gneder'"
+        :label="'Select Gender'"
       />
     </div>
     <div class="q-my-auto col-1">

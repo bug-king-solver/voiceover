@@ -1,2 +1,3 @@
 import signupconstants from "./signupconstants";
-export { signupconstants };
+import contactusconstants from "./contactusconstants";
+export { signupconstants, contactusconstants };

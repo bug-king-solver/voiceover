@@ -4,7 +4,7 @@ const countries = Object.values(countryList.countries).map(
   (country) => country.name
 );
 const languages = Object.values(countryList.countries).map(
-  (country) => country.native
+  (country) => country.name
 );
 const phoneCodes = Object.values(countryList.countries).map(
   (country) => "+" + country.phone + " (" + country.name + ")"

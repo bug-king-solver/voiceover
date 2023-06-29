@@ -12,13 +12,16 @@
           </router-link>
 
           <router-link to="/our-services">
-            <q-btn flat color="black" label="Our services"
+            <q-btn flat color="black" label="Our services" class="myButton"
           /></router-link>
           <router-link to="/terms-conditions">
             <q-btn flat color="black" label="Terms and conditions"
           /></router-link>
           <router-link to="/how-work">
             <q-btn flat color="black" label="How we work"
+          /></router-link>
+          <router-link to="/how-work">
+            <q-btn flat color="black" label="Traslation"
           /></router-link>
           <router-link to="/contact-us">
             <q-btn flat color="black" label="Contact us"
@@ -52,7 +55,7 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .myBrand:before {
   box-shadow: none;
 }
