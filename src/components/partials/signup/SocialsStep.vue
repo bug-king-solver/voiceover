@@ -86,13 +86,7 @@
     <!-- BEGIN: Next and Back Button Group -->
     <q-stepper-navigation>
       <q-btn @click="setPage(9)" color="primary" label="Continue" />
-      <q-btn
-        flat
-        @click="setPage(7)"
-        color="primary"
-        label="Back"
-        class="q-ml-sm"
-      />
+      <q-btn @click="setPage(7)" color="grey" label="Back" class="q-ml-sm" />
     </q-stepper-navigation>
     <!-- END: Next and Back Button Group -->
   </q-step>
