@@ -33,7 +33,6 @@ import { ref } from "vue";
 export default {
   setup() {
     const role = ref("artist");
-    console.log(role);
     return {
       role,
     };

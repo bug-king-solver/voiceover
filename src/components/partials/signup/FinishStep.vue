@@ -14,7 +14,12 @@
         />
       </div>
       <div class="col-2" style="margin: auto">
-        <q-btn color="primary" label="Verify" :disabled="vuelidate.$invalid" />
+        <q-btn
+          color="primary"
+          label="Verify"
+          @click="onVerify()"
+          :disabled="vuelidate.$invalid"
+        />
       </div>
     </div>
     <!-- END: Verification -->
@@ -55,19 +60,20 @@ export default {
     async function validate() {
       return vuelidate.value.$validate();
     }
-    const onNext = async (number) => {
+    const onSubmit = async (number) => {
+      window.alert("hhh");
       try {
         const valid = await validate();
         if (!valid) {
           return console.log("Form could not be submitted.");
         }
-        props.setPage(number);
       } catch (error) {
         console.error("Login error");
       }
     };
     return {
       vuelidate,
+      onSubmit,
     };
   },
 };
