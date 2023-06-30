@@ -2,10 +2,11 @@
   <!-- BEGIN: Studio Recording -->
   <q-step :name="6" title="Studio Recording" prefix="6" :done="step > 6">
     <!-- BEGIN: Website URL -->
-    <div>
-      <label for="website"
-        >Website URL (nearest venue for on-location sessions) (optional)</label
-      >
+    <div class="q-mt-sm">
+      <custom-label
+        :role="'website'"
+        :desc="'Website URL (nearest venue for on-location sessions) (optional)'"
+      />
       <q-input
         filled
         v-model="websiteUrl"
@@ -14,18 +15,18 @@
     </div>
     <!-- END: Website URL -->
     <!-- BEGIN: Willing To Travel -->
-    <radio-group-form :desc="'Are you willing to travel?'" v-model="travel" />
+    <div class="q-mt-sm">
+      <custom-label :role="'travel'" :desc="'Are you willing to travel?'" />
+      <div class="row justify-start">
+        <q-radio v-model="travel" label="Yes" val="yes"></q-radio>
+        <q-radio v-model="travel" label="No" val="no"></q-radio>
+      </div>
+    </div>
     <!-- END: Willing To Travel -->
     <!-- BEGIN: Next and Back Button Group -->
     <q-stepper-navigation>
       <q-btn @click="setPage(7)" color="primary" label="Continue" />
-      <q-btn
-        flat
-        @click="setPage(5)"
-        color="primary"
-        label="Back"
-        class="q-ml-sm"
-      />
+      <q-btn @click="setPage(5)" color="grey" label="Back" class="q-ml-sm" />
     </q-stepper-navigation>
     <!-- END: Next and Back Button Group -->
   </q-step>
@@ -33,7 +34,7 @@
 </template>
 <script>
 import { ref } from "vue";
-import RadioGroupForm from "src/components/common/RadioGroupForm.vue";
+import CustomLabel from "src/components/common/CustomLabel.vue";
 
 export default {
   props: {
@@ -41,11 +42,11 @@ export default {
     setPage: Function,
   },
   components: {
-    RadioGroupForm,
+    CustomLabel,
   },
   setup() {
     const websiteUrl = ref(null);
-    const travel = ref("Yes");
+    const travel = ref("yes");
     return {
       websiteUrl,
       travel,

@@ -111,13 +111,7 @@
         label="Continue"
         :disabled="vuelidate.$invalid"
       />
-      <q-btn
-        flat
-        @click="setPage(4)"
-        color="primary"
-        label="Back"
-        class="q-ml-sm"
-      />
+      <q-btn @click="setPage(4)" color="grey" label="Back" class="q-ml-sm" />
     </q-stepper-navigation>
     <!-- END: Next and Back Button Group -->
   </q-step>
