@@ -27,7 +27,7 @@
         <router-link v-if="!loggedIn" to="/signin">
           <no-hover-button :label="'SIGN IN'" />
         </router-link>
-        <router-link to="/presignup">
+        <router-link to="/signup">
           <no-hover-button :label="'SIGN UP'" />
         </router-link>
       </div>

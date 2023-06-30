@@ -17,8 +17,10 @@
           </div>
         </div>
         <div class="row justify-end q-mt-lg">
-          <router-link to="/signup">
-            <q-btn label="Next" color="primary" />
+          <router-link
+            :to="role === 'client' ? '/signup/client' : '/signup/artist'"
+          >
+            <q-btn label="Next" color="primary" @click="console.log(role)" />
           </router-link>
         </div>
       </div>
@@ -31,6 +33,7 @@ import { ref } from "vue";
 export default {
   setup() {
     const role = ref("artist");
+    console.log(role);
     return {
       role,
     };
