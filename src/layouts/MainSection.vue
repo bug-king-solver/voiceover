@@ -1,5 +1,5 @@
 <template>
-  <q-page-container style="padding-bottom: 100px">
+  <q-page-container class="mainSection">
     <router-view />
   </q-page-container>
 </template>
@@ -11,3 +11,9 @@ export default defineComponent({
   setup() {},
 });
 </script>
+
+<style scoped>
+.mainSection {
+  min-height: 780px;
+}
+</style>
