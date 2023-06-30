@@ -54,7 +54,7 @@ export default {
     FinishStep,
   },
   setup() {
-    const step = ref(1);
+    const step = ref(5);
     const setPage = (pageNumber) => {
       step.value = pageNumber;
     };

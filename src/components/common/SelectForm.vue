@@ -1,6 +1,5 @@
 <template>
   <div>
-    <label :for="role">{{ desc }}</label>
     <q-select
       :rounded="round"
       :label="label"
@@ -12,8 +11,6 @@
 <script>
 export default {
   props: {
-    role: String,
-    desc: String,
     options: Array,
     round: Boolean,
   },

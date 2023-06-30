@@ -40,6 +40,7 @@ const interests = [
   "Singing / Jingles",
   "Comedy",
 ];
+const naturalVoices = ["aaa", "bbb"];
 const startYear = 1943;
 const currentYear = new Date().getFullYear();
 const startyears = Array.from(
@@ -72,6 +73,7 @@ export default {
   genders,
   roles,
   interests,
+  naturalVoices,
   startyears,
   availabilities,
   currencies,
