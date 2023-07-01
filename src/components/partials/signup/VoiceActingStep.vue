@@ -1,49 +1,6 @@
 <template>
   <!-- BEGIN: Voice Acting -->
   <q-step :name="5" title="Voice Acting" prefix="5" :done="step > 5">
-    <!-- BEGIN: Your Role -->
-    <div class="q-mt-sm">
-      <custom-label :role="'role'" :desc="'I am a...'" />
-      <q-select
-        filled
-        v-model="vuelidate.role.$model"
-        :error="vuelidate.role.$error"
-        @blur="vuelidate.role.$touch"
-        :options="roleList"
-        :label="'How do you refer to yourself? *'"
-      />
-    </div>
-    <!-- END: Your Role -->
-    <!-- BEGIN: Work Interest -->
-    <div class="q-mt-sm">
-      <custom-label :role="'interest'" :desc="'Work Interest'" />
-      <q-select
-        filled
-        v-model="vuelidate.interest.$model"
-        :error="vuelidate.interest.$error"
-        @blur="vuelidate.interest.$touch"
-        :options="interestList"
-        :label="'Job types you perform (or are seeking) *'"
-      />
-    </div>
-    <!-- END: Work Interest -->
-    <!-- BEGIN: Natural Voice -->
-    <div class="q-mt-sm">
-      <custom-label
-        :role="'naturalvoide'"
-        :desc="'Choose three characteristic keywords that best describe your natural voice'"
-      />
-      <q-select
-        filled
-        v-model="voice"
-        multiple
-        :options="voiceList"
-        max-values="3"
-        :label="'e.g Warm, Friendly, Approachable *'"
-        hide-bottom-space
-      />
-    </div>
-    <!-- END: Natural Voice -->
     <!-- BEGIN: Start Year -->
     <div class="q-mt-sm">
       <custom-label :role="'startyear'" :desc="'Year Started Perfoming'" />

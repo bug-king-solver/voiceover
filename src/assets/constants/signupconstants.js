@@ -10,7 +10,7 @@ const phoneCodes = Object.values(countryList.countries).map(
   (country) => "+" + country.phone + " (" + country.name + ")"
 );
 const titles = ["Mr", "Miss", "Ms", "Mx", "Dr", "Prof", "Sir", "Dame"];
-const genders = ["Male", "Femail", "Both"];
+const genders = ["Male", "Female", "Both"];
 const roles = [
   "Voice actior",
   "Voice artist",
