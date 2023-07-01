@@ -1,6 +1,6 @@
 <template>
-  <div class="row justify-between" style="justify-content: center">
-    <div class="q-mx-sm col-7">
+  <div class="row justify-around">
+    <div class="col-6">
       <select-form
         outlined
         v-model="language"
@@ -9,7 +9,7 @@
         :label="'Select Language/Accent'"
       />
     </div>
-    <div class="q-ml-lg col-3">
+    <div class="col-4">
       <select-form
         outlined
         :round="true"
@@ -18,12 +18,8 @@
         :label="'Select Gender'"
       />
     </div>
-    <div class="q-my-auto col-1">
-      <q-btn round>
-        <q-avatar size="42px">
-          <img src="https://cdn.quasar.dev/img/avatar2.jpg" />
-        </q-avatar>
-      </q-btn>
+    <div class="col-1 q-pt-sm">
+      <q-btn round size="md" icon="search" />
     </div>
   </div>
 </template>

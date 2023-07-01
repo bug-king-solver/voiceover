@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="noHover">{{ label }}</button>
+  <p class="noHover">{{ label }}</p>
 </template>
 <script>
 import { defineComponent } from "vue";
@@ -11,12 +11,10 @@ export default defineComponent({
 </script>
 <style scoped>
 .noHover {
-  background-color: white;
-  margin: 0 10px;
-  border: none;
-}
-.noHover:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  margin: 0px;
+  font-size: 14px;
+  font-family: "icomoonFont";
+  line-height: 1.43;
+  font-weight: 700;
 }
 </style>

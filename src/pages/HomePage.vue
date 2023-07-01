@@ -1,9 +1,15 @@
 <template>
   <q-page>
-    <div
-      align="center"
-      style="max-width: 150vh; margin: auto; padding-top: 50px"
-    >
+    <div class="homePage">
+      <q-banner rounded class="bg-cyan-2">
+        <template v-slot:avatar>
+          <img
+            src="../assets/img/celebration.png"
+            style="width: 32px; height: 32px"
+          />
+        </template>
+        Merry Christmas&nbsp;!!!
+      </q-banner>
       <!-- BEGIN: Hero Title -->
       <div>
         <h2 class="text-center" style="margin-bottom: 0">
@@ -35,3 +41,10 @@ export default defineComponent({
   },
 });
 </script>
+<style scoped>
+.homePage {
+  max-width: 150vh;
+  margin: auto;
+  padding-top: 50px;
+}
+</style>

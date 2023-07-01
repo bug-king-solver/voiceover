@@ -10,7 +10,7 @@ const phoneCodes = Object.values(countryList.countries).map(
   (country) => "+" + country.phone + " (" + country.name + ")"
 );
 const titles = ["Mr", "Miss", "Ms", "Mx", "Dr", "Prof", "Sir", "Dame"];
-const genders = ["Male", "Femail", "Both"];
+const genders = ["Male", "Female", "Both"];
 const roles = [
   "Voice actior",
   "Voice artist",
@@ -40,6 +40,7 @@ const interests = [
   "Singing / Jingles",
   "Comedy",
 ];
+const naturalVoices = ["aaa", "bbb"];
 const startYear = 1943;
 const currentYear = new Date().getFullYear();
 const startyears = Array.from(
@@ -72,6 +73,7 @@ export default {
   genders,
   roles,
   interests,
+  naturalVoices,
   startyears,
   availabilities,
   currencies,

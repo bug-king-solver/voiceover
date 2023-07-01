@@ -8,6 +8,7 @@
         <q-input
           v-model="vuelidate.email.$model"
           :error="vuelidate.email.$error"
+          :type="email"
           @blur="vuelidate.email.$touch"
           filled
           label="Enter your email address *"

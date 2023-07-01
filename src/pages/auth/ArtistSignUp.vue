@@ -19,7 +19,7 @@
           <contact-detail-step :step="step" :setPage="setPage" />
           <voice-acting-step :step="step" :setPage="setPage" />
           <studio-recording :step="step" :setPage="setPage" />
-          <your-rates :step="step" :setPage="setPage" />
+          <your-rates-step :step="step" :setPage="setPage" />
           <socials :step="step" :setPage="setPage" />
           <finish-step :step="step" :setPage="setPage" />
         </q-stepper>
@@ -36,7 +36,7 @@ import AboutYouStep from "src/components/partials/signup/AboutYouStep.vue";
 import ContactDetailStep from "src/components/partials/signup/ContactDetailStep.vue";
 import VoiceActingStep from "src/components/partials/signup/VoiceActingStep.vue";
 import StudioRecording from "src/components/partials/signup/StudioRecordingStep.vue";
-import YourRates from "src/components/partials/signup/YourRates.vue";
+import YourRatesStep from "src/components/partials/signup/YourRatesStep.vue";
 import Socials from "src/components/partials/signup/SocialsStep.vue";
 import FinishStep from "src/components/partials/signup/FinishStep.vue";
 
@@ -49,7 +49,7 @@ export default {
     ContactDetailStep,
     VoiceActingStep,
     StudioRecording,
-    YourRates,
+    YourRatesStep,
     Socials,
     FinishStep,
   },

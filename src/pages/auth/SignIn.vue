@@ -3,7 +3,6 @@
     <q-card class="my-card">
       <q-card-section class="bg-white text-white">
         <div class="text-h6 text-black">SIGN IN</div>
-        <!-- <div class="text-subtitle2">Welcome Back</div> -->
       </q-card-section>
       <q-separator />
       <q-card-actions align="center">
@@ -58,7 +57,6 @@
 import { useQuasar } from "quasar";
 import { ref } from "vue";
 import CustomLabel from "src/components/common/CustomLabel.vue";
-import { storeToRefs } from "pinia";
 import { useAuthStore } from "stores/auth";
 
 export default {
@@ -68,7 +66,6 @@ export default {
   },
 
   setup() {
-    const $q = useQuasar();
     const password = ref("");
     const isPwd = ref(true);
     const email = ref(null);

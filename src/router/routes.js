@@ -22,6 +22,13 @@ const routes = [
     children: [{ path: "", component: () => import("pages/HowWork.vue") }],
   },
   {
+    path: "/translations",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/TranslatorPage.vue") },
+    ],
+  },
+  {
     path: "/contact-us",
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/ContactUs.vue") }],
@@ -32,18 +39,26 @@ const routes = [
     children: [{ path: "", component: () => import("pages/auth/SignIn.vue") }],
   },
   {
-    path: "/presignup",
+    path: "/signup",
     component: () => import("layouts/MainLayout.vue"),
     children: [
       { path: "", component: () => import("pages/auth/PreSignUp.vue") },
     ],
   },
   {
-    path: "/signup",
+    path: "/signup/artist",
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/auth/SignUp.vue") }],
+    children: [
+      { path: "", component: () => import("src/pages/auth/ArtistSignUp.vue") },
+    ],
   },
-
+  {
+    path: "/signup/client",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/auth/ClientSignUp.vue") },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

@@ -1,1 +1,13 @@
 // app global css in SCSS form
+@font-face {
+  font-family: icomoonFont;
+  src: url(../assets/fonts/icomoon/icomoon.woff);
+}
+
+h2,
+h4,
+h5,
+p,
+label {
+  font-family: "icomoonFont";
+}

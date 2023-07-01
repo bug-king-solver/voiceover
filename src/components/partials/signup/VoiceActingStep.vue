@@ -1,76 +1,50 @@
 <template>
   <!-- BEGIN: Voice Acting -->
   <q-step :name="5" title="Voice Acting" prefix="5" :done="step > 5">
-    <!-- BEGIN: Your Role -->
-    <select-form
-      :for="'role'"
-      :desc="'How do you refer to yourself?'"
-      filled
-      v-model="role"
-      :options="roleList"
-    />
-    <!-- END: Your Role -->
-    <!-- BEGIN: Work Interest -->
-    <select-form
-      :for="'interest'"
-      :desc="'Work Interest Job types you perform (or are seeking)'"
-      filled
-      v-model="interest"
-      :options="interestList"
-    />
-    <!-- END: Work Interest -->
-    <!-- BEGIN: Natural Voice -->
-    <div>
-      <label for="natulalvoice"
-        >Choose three characteristic keywords that best describe your natural
-        voice</label
-      >
+    <!-- BEGIN: Start Year -->
+    <div class="q-mt-sm">
+      <custom-label :role="'startyear'" :desc="'Year Started Perfoming'" />
       <q-select
         filled
-        v-model="voice"
-        multiple
-        :options="voiceList"
-        counter
-        max-values="3"
+        v-model="vuelidate.startYear.$model"
+        :error="vuelidate.startYear.$error"
+        @blur="vuelidate.startYear.$touch"
+        :options="startYearList"
+        :label="'Select your started year *'"
+        hide-bottom-space
       />
     </div>
-    <!-- END: Natural Voice -->
-    <!-- BEGIN: Start Year -->
-    <select-form
-      :for="'startyear'"
-      :desc="'Year Started Performing'"
-      filled
-      v-model="startYear"
-      :options="startYearList"
-    />
+
     <!-- END: Start Year -->
     <!-- BEGIN: availability -->
-    <select-form
-      :for="'availability'"
-      :desc="`Availability Average notice required for booking`"
-      filled
-      v-model="availability"
-      :options="availabilityList"
-    />
+    <div class="q-mt-sm">
+      <custom-label :role="'availability'" :desc="'Availability'" />
+      <q-select
+        filled
+        v-model="vuelidate.availability.$model"
+        :error="vuelidate.availability.$error"
+        @blur="vuelidate.availability.$touch"
+        :options="availabilityList"
+        :label="'Average notice required for booking *'"
+        hide-bottom-space
+      />
+    </div>
     <!-- END: availability -->
     <!-- BEGIN: Time Synced -->
-    <!-- <div>
-      <label for="timesynced">Can you record time synced to picture?</label>
+    <div class="q-mt-sm">
+      <custom-label
+        :role="'timesynced'"
+        :desc="'Can you record time synced to picture?'"
+      />
       <div class="row justify-start">
         <q-radio v-model="timesynced" label="Yes" val="Yes"></q-radio>
         <q-radio v-model="timesynced" label="No" val="No"></q-radio>
       </div>
-    </div> -->
-    <radio-group-form
-      :desc="'Can you record time synced to picture?'"
-      v-model="timesynced"
-      :radiodesc="['Yes', 'No']"
-      :readioval="['Yes', 'No']"
-    />
+    </div>
     <!-- END: Time Synced -->
     <!-- BEGIN: Record Lip-Sync -->
-    <div>
-      <label for="record">Can you record lip-sync?</label>
+    <div class="q-mt-sm">
+      <custom-label :role="'record'" :desc="'Can you record lip-sync?'" />
       <div class="row justify-start">
         <q-radio v-model="record" label="Yes" val="Yes"></q-radio>
         <q-radio v-model="record" label="No" val="No"></q-radio>
@@ -78,8 +52,8 @@
     </div>
     <!-- END: Record Lip-Sync -->
     <!-- BEGIN: Home Studio -->
-    <div>
-      <label for="homestudio">Do you have a Home Studio?</label>
+    <div class="q-mt-sm">
+      <custom-label :role="'homestudio'" :desc="'Do you have a Home Studio?'" />
       <div class="row justify-start">
         <q-radio v-model="homestudio" label="Yes" val="Yes"></q-radio>
         <q-radio v-model="homestudio" label="No" val="No"></q-radio>
@@ -88,24 +62,24 @@
     <!-- END: Home Studio -->
     <!-- BEGIN: Next and Back Button Group -->
     <q-stepper-navigation>
-      <q-btn @click="setPage(6)" color="primary" label="Continue" />
       <q-btn
-        flat
-        @click="setPage(4)"
+        @click="onNext(6)"
         color="primary"
-        label="Back"
-        class="q-ml-sm"
+        label="Continue"
+        :disabled="vuelidate.$invalid"
       />
+      <q-btn @click="setPage(4)" color="grey" label="Back" class="q-ml-sm" />
     </q-stepper-navigation>
     <!-- END: Next and Back Button Group -->
   </q-step>
   <!-- END: Voice Acting -->
 </template>
 <script>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
+import useVuelidate from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
 import { signupconstants } from "src/assets/constants";
-import SelectForm from "src/components/common/SelectForm.vue";
-import RadioGroupForm from "src/components/common/RadioGroupForm.vue";
+import CustomLabel from "src/components/common/CustomLabel.vue";
 
 export default {
   props: {
@@ -113,33 +87,57 @@ export default {
     setPage: Function,
   },
   components: {
-    SelectForm,
-    RadioGroupForm,
+    CustomLabel,
   },
-  setup() {
-    const role = ref("Voice actor");
+  setup(props) {
     const roleList = signupconstants.roles;
-    const interest = ref("All");
     const interestList = signupconstants.interests;
-    const startYear = ref(null);
     const startYearList = signupconstants.startyears;
-    const availability = ref("< 12hours");
     const availabilityList = signupconstants.availabilities;
+    const voiceList = signupconstants.naturalVoices;
     const timesynced = ref("Yes");
     const record = ref("Yes");
     const homestudio = ref("Yes");
+    const voice = ref(null);
+    const rules = {
+      role: { required },
+      interest: { required },
+      startYear: { required },
+      availability: { required },
+    };
+    const form = reactive({
+      role: "",
+      interest: "",
+      startYear: "",
+      availability: "",
+    });
+    const vuelidate = useVuelidate(rules, form);
+    async function validate() {
+      return vuelidate.value.$validate();
+    }
+    const onNext = async (number) => {
+      try {
+        const valid = await validate();
+        if (!valid) {
+          return console.log("Form could not be submitted.");
+        }
+        props.setPage(number);
+      } catch (error) {
+        console.error("Login error");
+      }
+    };
     return {
-      role,
+      vuelidate,
       roleList,
-      interest,
       interestList,
-      startYear,
+      voice,
+      voiceList,
       startYearList,
-      availability,
       availabilityList,
       timesynced,
       record,
       homestudio,
+      onNext,
     };
   },
 };
