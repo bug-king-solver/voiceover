@@ -11,21 +11,21 @@
         </router-link>
         <div class="menuBar">
           <router-link class="underLine" to="/our-services">
-            <no-hover-button :label="'OurServices'"
+            <no-hover-button :label="'Our Services'"
           /></router-link>
           <router-link
             class="underLine"
             to="/terms-conditions"
             style="margin-left: 20px"
           >
-            <no-hover-button :label="'TermsandConditions'" />
+            <no-hover-button :label="'Terms and Conditions'" />
           </router-link>
           <router-link
             class="underLine"
             to="/how-work"
             style="margin-left: 20px"
           >
-            <no-hover-button :label="'HowWeWork'" />
+            <no-hover-button :label="'How We Work'" />
           </router-link>
           <router-link
             class="underLine"
@@ -39,7 +39,7 @@
             to="/contact-us"
             style="margin-left: 20px"
           >
-            <no-hover-button :label="'ContactUs'" />
+            <no-hover-button :label="'Contact Us'" />
           </router-link>
         </div>
       </div>
