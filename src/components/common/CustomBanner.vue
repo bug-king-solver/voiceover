@@ -14,7 +14,6 @@ export default {
   },
   setup(props) {
     const imgUrl = "/assets/img/" + props.src + ".png";
-    console.log(imgUrl);
     return {
       imgUrl,
     };
