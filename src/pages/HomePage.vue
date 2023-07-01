@@ -1,17 +1,9 @@
 <template>
   <q-page>
     <div class="homePage">
-      <q-banner rounded class="bg-cyan-2">
-        <template v-slot:avatar>
-          <img
-            src="../assets/img/celebration.png"
-            style="width: 32px; height: 32px"
-          />
-        </template>
-        Merry Christmas&nbsp;!!!
-      </q-banner>
       <!-- BEGIN: Hero Title -->
       <div>
+        <custom-banner :desc="'Merry Christmas one! ❤️'" :src="'celebration'" />
         <h2 class="text-center" style="margin-bottom: 0">
           Welcome to Sarz Recording Studio
         </h2>
@@ -29,12 +21,14 @@
 
 <script>
 import ComplexSearchForm from "src/components/common/ComplexSearchForm.vue";
+import CustomBanner from "src/components/common/CustomBanner.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "HomePage",
   components: {
     ComplexSearchForm,
+    CustomBanner,
   },
   setup() {
     // Option 2: use computed and functions to use the store
