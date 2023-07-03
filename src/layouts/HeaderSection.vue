@@ -43,12 +43,17 @@
           </router-link>
         </div>
       </div>
-      <div class="signButton">
+      <div class="signButton" v-if="loggedIn === false">
         <router-link class="underLine" to="/signin" style="margin-left: 20px">
           <no-hover-button :label="'SignIn'" />
         </router-link>
         <router-link class="underLine" to="/signup" style="margin-left: 20px">
           <no-hover-button :label="'SignUp'" />
+        </router-link>
+      </div>
+      <div v-if="loggedIn === true">
+        <router-link class="underLine" to="/" style="margin-left: 20px">
+          <no-hover-button :label="'SignOut'" />
         </router-link>
       </div>
     </q-toolbar>
@@ -58,16 +63,18 @@
 import { computed, defineComponent } from "vue";
 import NoHoverButton from "src/components/common/NoHoverButton.vue";
 import { useAuthStore } from "stores/auth";
+import { storeToRefs } from "pinia";
 
 export default defineComponent({
   name: "HeaderSection",
   components: {
     NoHoverButton,
   },
+
   setup() {
     const authStore = useAuthStore();
-    const loggedIn = computed(() => authStore.loggedIn);
-    // const { loggedIn } = authStore;
+    const { loggedIn } = storeToRefs(authStore);
+    // const loggedIn = computed(() => user.value);
     return {
       loggedIn,
     };

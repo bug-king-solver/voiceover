@@ -54,11 +54,10 @@
 </template>
 
 <script>
-import { useQuasar } from "quasar";
 import { ref } from "vue";
 import CustomLabel from "src/components/common/CustomLabel.vue";
 import { useAuthStore } from "stores/auth";
-
+import { useRouter } from "vue-router";
 export default {
   name: "SignIn",
   components: {
@@ -71,10 +70,11 @@ export default {
     const email = ref(null);
     const accept = ref(false);
     const authStore = useAuthStore();
+    const router = useRouter();
     function onSubmit() {
-      // const {loggedIn} = authStore;
       alert();
       authStore.login();
+      router.push("/");
     }
     function onReset() {
       email.value = null;
