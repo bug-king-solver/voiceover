@@ -2,8 +2,8 @@
   <div class="dropdown">
     <button class="dropbtn">SignIn</button>
     <div class="dropdown-content">
-      <a href="#">{{ desc[0] }}</a>
-      <a href="#">{{ desc[1] }}</a>
+      <a href="#">sdds</a>
+      <a href="#">dsf</a>
     </div>
   </div>
 </template>
@@ -18,9 +18,9 @@ export default {
 /* Style The Dropdown Button */
 .dropbtn {
   background-color: white;
+  font-size: 14px;
+  font-family: "icomoonFont";
   color: black;
-  padding: 16px;
-  font-size: 16px;
   border: none;
   cursor: pointer;
 }
@@ -35,6 +35,8 @@ export default {
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0;
+  top: 20px;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -61,6 +63,6 @@ export default {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #ffffff;
 }
 </style>
