@@ -14,7 +14,7 @@ export default defineComponent({
   margin: 0px;
   font-size: 14px;
   font-family: "icomoonFont";
-  line-height: 1.43;
-  font-weight: 700;
+  line-height: 1.73;
+  font-weight: 570;
 }
 </style>
