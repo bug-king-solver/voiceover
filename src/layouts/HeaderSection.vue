@@ -1,12 +1,12 @@
 <template>
   <q-header elevated class="bg-white">
-    <q-toolbar class="justify-between">
+    <q-toolbar class="justify-between" style="height: 56px">
       <div class="row items-center">
         <router-link to="/">
           <img
             class="myBrand"
-            src="../assets/img/blacklogo.png"
-            style="width: 70px"
+            src="../assets/img/whitelogo.png"
+            style="width: 80px; height: 70px"
           />
         </router-link>
         <div class="menuBar">
