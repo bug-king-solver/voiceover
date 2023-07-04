@@ -60,7 +60,7 @@
   </q-header>
 </template>
 <script>
-import { computed, defineComponent } from "vue";
+import { defineComponent } from "vue";
 import NoHoverButton from "src/components/common/NoHoverButton.vue";
 import { useAuthStore } from "stores/auth";
 import { storeToRefs } from "pinia";
