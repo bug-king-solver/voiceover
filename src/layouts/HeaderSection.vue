@@ -5,37 +5,37 @@
         <router-link to="/">
           <img
             class="myBrand"
-            src="../assets/img/whitelogo.png"
-            style="width: 80px; height: 70px"
+            src="../assets/img/logo.png"
+            style="width: 80px; height: 47x"
           />
         </router-link>
         <div class="menuBar">
-          <router-link class="underLine" to="/our-services">
+          <router-link class="underLine menu-title" to="/our-services">
             <no-hover-button :label="'Our Services'"
           /></router-link>
           <router-link
-            class="underLine"
+            class="underLine menu-title"
             to="/terms-conditions"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'Terms and Conditions'" />
           </router-link>
           <router-link
-            class="underLine"
+            class="underLine menu-title"
             to="/how-work"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'How We Work'" />
           </router-link>
           <router-link
-            class="underLine"
+            class="underLine menu-title"
             to="/translations"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'Translation'" />
           </router-link>
           <router-link
-            class="underLine"
+            class="underLine menu-title"
             to="/contact-us"
             style="margin-left: 20px"
           >
@@ -44,15 +44,27 @@
         </div>
       </div>
       <div class="signButton" v-if="loggedIn === false">
-        <router-link class="underLine" to="/signin" style="margin-left: 20px">
+        <router-link
+          class="underLine menu-title"
+          to="/signin"
+          style="margin-left: 20px"
+        >
           <no-hover-button :label="'Sign In'" />
         </router-link>
-        <router-link class="underLine" to="/signup" style="margin-left: 20px">
+        <router-link
+          class="underLine menu-title"
+          to="/signup"
+          style="margin-left: 20px"
+        >
           <no-hover-button :label="'Sign Up'" />
         </router-link>
       </div>
       <div v-if="loggedIn === true">
-        <router-link class="underLine" to="/" style="margin-left: 20px">
+        <router-link
+          class="underLine menu-title"
+          to="/"
+          style="margin-left: 20px"
+        >
           <no-hover-button :label="'Sign Out'" />
         </router-link>
       </div>

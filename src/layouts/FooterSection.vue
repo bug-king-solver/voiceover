@@ -3,14 +3,12 @@
     <div class="myFooter q-pa-md">
       <div class="row q-gutter-x-md">
         <div class="col myFooterSections">
-          <div>
-            <router-link to="/">
-              <img
-                src="../assets/img/whitelogo.png"
-                style="width: 70px; height: 50px"
-              />
-            </router-link>
-          </div>
+          <router-link to="/">
+            <img
+              src="../assets/img/logo.png"
+              style="width: 70px; height: 50px"
+            />
+          </router-link>
           <div>
             <p class="text-black">
               Online Voiceover Agency - Connecting clients with the best
@@ -105,7 +103,7 @@
                 href="mailto:info@sarzrecordingstudio.com"
                 style="margin-left: 10px"
                 class="text-black"
-                >info@sarzrecordingstudio.com</a
+                ><p>info@sarzrecordingstudio.com</p></a
               >
             </div>
             <p class="text-black">For Non-UK Customers: +447774647962</p>
