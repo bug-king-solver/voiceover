@@ -1,60 +1,76 @@
 <template>
   <q-header elevated class="bg-white">
     <q-toolbar class="justify-between" style="height: 56px">
-      <div class="row items-center">
-        <router-link to="/">
-          <img
-            class="myBrand"
-            src="../assets/img/whitelogo.png"
-            style="width: 80px; height: 70px"
-          />
-        </router-link>
+      <div class="row items-center header">
+        <div>
+          <router-link to="/">
+            <img
+              class="myBrand"
+              src="../assets/img/logo.png"
+              style="width: 80px; height: 47x"
+            />
+          </router-link>
+        </div>
         <div class="menuBar">
-          <router-link class="underLine" to="/our-services">
+          <router-link
+            class="menu-title"
+            to="/our-services"
+            style="margin-left: 20px"
+          >
             <no-hover-button :label="'Our Services'"
           /></router-link>
           <router-link
-            class="underLine"
+            class="menu-title"
             to="/terms-conditions"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'Terms and Conditions'" />
           </router-link>
           <router-link
-            class="underLine"
+            class="menu-title"
             to="/how-work"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'How We Work'" />
           </router-link>
           <router-link
-            class="underLine"
+            class="menu-title"
             to="/translations"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'Translation'" />
           </router-link>
           <router-link
-            class="underLine"
+            class="menu-title"
             to="/contact-us"
             style="margin-left: 20px"
           >
             <no-hover-button :label="'Contact Us'" />
           </router-link>
         </div>
-      </div>
-      <div class="signButton" v-if="loggedIn === false">
-        <router-link class="underLine" to="/signin" style="margin-left: 20px">
-          <no-hover-button :label="'Sign In'" />
-        </router-link>
-        <router-link class="underLine" to="/signup" style="margin-left: 20px">
-          <no-hover-button :label="'Sign Up'" />
-        </router-link>
-      </div>
-      <div v-if="loggedIn === true">
-        <router-link class="underLine" to="/" style="margin-left: 20px">
-          <no-hover-button :label="'Sign Out'" />
-        </router-link>
+        <div class="signButtonGroup">
+          <div class="signButton" v-if="loggedIn == false">
+            <router-link
+              class="menu-title"
+              to="/signin"
+              style="margin-left: 20px"
+            >
+              <no-hover-button :label="'Sign In'" />
+            </router-link>
+            <router-link
+              class="menu-title"
+              to="/signup"
+              style="margin-left: 20px"
+            >
+              <no-hover-button :label="'Sign Up'" />
+            </router-link>
+          </div>
+          <div v-if="loggedIn == true">
+            <router-link class="menu-title" to="/" style="margin-left: 20px">
+              <no-hover-button :label="'Sign Out'" />
+            </router-link>
+          </div>
+        </div>
       </div>
     </q-toolbar>
   </q-header>
@@ -74,7 +90,6 @@ export default defineComponent({
   setup() {
     const authStore = useAuthStore();
     const { loggedIn } = storeToRefs(authStore);
-    // const loggedIn = computed(() => user.value);
     return {
       loggedIn,
     };
@@ -96,28 +111,5 @@ export default defineComponent({
   flex-direction: row;
   align-items: center;
   height: 100%;
-}
-.underLine {
-  text-decoration: none;
-  border-bottom-color: rgb(189, 189, 189);
-  margin: 0px;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "icomoonFont";
-  text-decoration: none;
-  color: black;
-  display: block;
-  line-height: 1;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  padding-top: 2px;
-}
-.underLine:hover {
-  border-bottom-color: rgb(189, 189, 189);
-}
-.signButton {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
 }
 </style>
