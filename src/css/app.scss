@@ -9,6 +9,33 @@ h4,
 h5,
 label {
 }
+.header {
+  width: 100%;
+}
 .menu-title {
   font-family: "icomoonFont";
+  text-decoration: none;
+  border-bottom-color: rgb(189, 189, 189);
+  margin: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "icomoonFont";
+  text-decoration: none;
+  color: black;
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  padding-top: 2px;
+}
+.menu-title:hover {
+  border-bottom-color: rgb(189, 189, 189);
+}
+.signButtonGroup {
+  margin-left: auto;
+}
+.signButton {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
 }
