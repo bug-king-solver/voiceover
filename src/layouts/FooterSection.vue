@@ -5,9 +5,10 @@
         <div class="col myFooterSections">
           <div>
             <router-link to="/">
-              <button class="myBrand">
-                <img src="../assets/img/blacklogo.png" />
-              </button>
+              <img
+                src="../assets/img/whitelogo.png"
+                style="width: 70px; height: 50px"
+              />
             </router-link>
           </div>
           <div>

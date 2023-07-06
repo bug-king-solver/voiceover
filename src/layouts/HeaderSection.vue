@@ -45,15 +45,15 @@
       </div>
       <div class="signButton" v-if="loggedIn === false">
         <router-link class="underLine" to="/signin" style="margin-left: 20px">
-          <no-hover-button :label="'SignIn'" />
+          <no-hover-button :label="'Sign In'" />
         </router-link>
         <router-link class="underLine" to="/signup" style="margin-left: 20px">
-          <no-hover-button :label="'SignUp'" />
+          <no-hover-button :label="'Sign Up'" />
         </router-link>
       </div>
       <div v-if="loggedIn === true">
         <router-link class="underLine" to="/" style="margin-left: 20px">
-          <no-hover-button :label="'SignOut'" />
+          <no-hover-button :label="'Sign Out'" />
         </router-link>
       </div>
     </q-toolbar>

@@ -8,6 +8,10 @@
       <q-card-actions align="center">
         <div class="q-pa-md q-panel">
           <q-form @submit="onSubmit" @reset="onReset">
+            <div>
+              <q-radio v-model="role" val="artist" label="Artist" />
+              <q-radio v-model="role" val="client" label="Client" />
+            </div>
             <!-- BEGIN: Your Email Address -->
             <custom-label :desc="'Email Address'" />
             <q-input
@@ -71,8 +75,8 @@ export default {
     const accept = ref(false);
     const authStore = useAuthStore();
     const router = useRouter();
+    const role = ref("artist");
     function onSubmit() {
-      alert();
       authStore.login();
       router.push("/");
     }
@@ -86,6 +90,7 @@ export default {
       onReset,
       password,
       isPwd,
+      role,
       email,
       accept,
     };
