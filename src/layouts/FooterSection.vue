@@ -89,7 +89,7 @@
         <div class="col myFooterSections">
           <h5 class="myFooterTitle text-black">Contact us</h5>
           <div>
-            <p class="icon" style="display: flex">
+            <div class="icon" style="display: flex">
               <svg
                 width="24"
                 height="24"
@@ -107,7 +107,7 @@
                 class="text-black"
                 >info@sarzrecordingstudio.com</a
               >
-            </p>
+            </div>
             <p class="text-black">For Non-UK Customers: +447774647962</p>
             <p class="text-black">UK Customers: 07774647962</p>
           </div>
@@ -115,15 +115,15 @@
         <div class="col myFooterSections">
           <h5 class="myFooterTitle text-black">Our Services</h5>
           <div>
-            <router-link to="/">
+            <router-link to="/" style="color: black">
               <p class="text-black">Voiceovers</p>
             </router-link>
             <div class="row">
-              <router-link to="/translations">
+              <router-link to="/translations" style="color: black">
                 <p class="text-black">Translations</p>
               </router-link>
             </div>
-            <router-link to="/contact-us">
+            <router-link to="/contact-us" style="color: black">
               <p class="text-black">Quick Auditions (Post Your Script)</p>
             </router-link>
           </div>
