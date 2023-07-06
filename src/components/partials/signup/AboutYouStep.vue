@@ -57,7 +57,8 @@
           v-model="vuelidate.date.$model"
           :error="vuelidate.date.$error"
           @blur="vuelidate.date.$touch"
-          mask="date"
+          mask="####.##.##"
+          label="yyyy.mm.dd"
           hide-bottom-space
         >
           <template v-slot:append>
@@ -92,12 +93,6 @@
         ></q-input>
       </div>
       <!-- END: Your Alias/ Stage Name/ Pseudonym -->
-      <!-- BEGIN: Profile Image -->
-      <div class="q-mt-sm">
-        <custom-label :desc="'Profile Image'" />
-        <q-uploader label="Profile Image" auto-upload style="height: 300px" />
-      </div>
-      <!-- END: Profile Image -->
       <!-- BEGIN: Native Country -->
       <div class="q-mt-sm">
         <label for="nativecountry"></label>
@@ -159,6 +154,7 @@ export default {
   },
   setup(props) {
     const titleList = signupconstants.titles;
+    signupconstants.genders.pop();
     const genderList = signupconstants.genders;
     const alias = ref(null);
     const countryList = signupconstants.countries;
@@ -177,15 +173,12 @@ export default {
       firstname: "",
       lastname: "",
       gender: "",
-      date:
-        new Date().getFullYear() +
-        "/" +
-        new Date().getMonth() +
-        "/" +
-        new Date().getDate(),
+      date: "",
       country: "",
       language: "",
     });
+
+    // const loggedIn = computed(() => user.value);
     const vuelidate = useVuelidate(rules, form);
     async function validate() {
       return vuelidate.value.$validate();
