@@ -82,7 +82,7 @@
           </div>
         </div>
         <div class="col myFooterSections">
-          <h5 class="myFooterTitle text-black">Contact us</h5>
+          <h6 class="myFooterTitle text-black">Contact us</h6>
           <div>
             <div class="icon" style="display: flex">
               <svg
@@ -108,7 +108,7 @@
           </div>
         </div>
         <div class="col myFooterSections">
-          <h5 class="myFooterTitle text-black">Our Services</h5>
+          <h6 class="myFooterTitle text-black">Our Services</h6>
           <div>
             <router-link to="/" style="color: black">
               <p class="text-black">Voiceovers</p>
@@ -124,7 +124,7 @@
           </div>
         </div>
         <div class="col myFooterSections">
-          <h5 class="myFooterTitle text-black">Information</h5>
+          <h6 class="myFooterTitle text-black">Information</h6>
           <p><a class="text-black" href="">Privacy Policy</a></p>
           <p><a class="text-black" href="">Terms and Conditions</a></p>
         </div>

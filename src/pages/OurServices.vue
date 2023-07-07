@@ -5,7 +5,7 @@
         <h3 style="margin-bottom: 0">Our Services</h3>
         <h5 class="q-my-sm">Voiceover, Translations, Dubbing</h5>
       </div>
-      <div class="row justify-between q-pa-md">
+      <div class="row justify-around q-pa-md">
         <q-card class="my-card">
           <img src="https://cdn.quasar.dev/img/mountains.jpg" />
           <q-card-section>

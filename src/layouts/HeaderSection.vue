@@ -96,7 +96,7 @@
               <router-link class="mini-menu-title" to="/translation">
                 <p class="mini-menu text-black">Translation</p>
               </router-link>
-              <router-link class="mini-menu-title" to="translations">
+              <router-link class="mini-menu-title" to="/contact-us">
                 <p class="mini-menu text-black">Contact Us</p>
               </router-link>
               <router-link class="mini-menu-title" to="/signin">
