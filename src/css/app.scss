@@ -32,6 +32,31 @@ label {
 .menu-title:hover {
   border-bottom-color: rgb(189, 189, 189);
 }
+.mini-menu-title {
+  font-family: "icomoonFont";
+  text-decoration: none;
+  border-bottom-color: rgb(189, 189, 189);
+  margin: 0px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "icomoonFont";
+  text-decoration: none;
+  color: black;
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+}
+.mini-menu {
+  margin: 0;
+  padding: 10px 0 10px 10px;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  background-color: white;
+  width: 160px;
+  margin-left: -120px;
+  font-family: "icomoonFont";
+}
 .signButtonGroup {
   margin-left: auto;
 }
@@ -39,4 +64,13 @@ label {
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
+}
+.logo {
+  border: none;
+  background-color: white;
+  width: 80px;
+  height: 47px;
+}
+.logo:hover {
+  cursor: pointer;
 }

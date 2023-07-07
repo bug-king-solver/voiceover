@@ -4,10 +4,7 @@
       <div class="row q-gutter-x-md">
         <div class="col myFooterSections">
           <router-link to="/">
-            <img
-              src="../assets/img/logo.png"
-              style="width: 70px; height: 50px"
-            />
+            <img class="logo" src="../assets/img/logo.png" />
           </router-link>
           <div>
             <p class="text-black">

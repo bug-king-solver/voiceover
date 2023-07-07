@@ -1,14 +1,10 @@
 <template>
   <q-header elevated class="bg-white">
     <q-toolbar class="justify-between" style="height: 56px">
-      <div class="row items-center header">
+      <div v-if="$q.screen.width > 855" class="row items-center header">
         <div>
           <router-link to="/">
-            <img
-              class="myBrand"
-              src="../assets/img/logo.png"
-              style="width: 80px; height: 47x"
-            />
+            <img class="logo" src="../assets/img/logo.png" />
           </router-link>
         </div>
         <div class="menuBar">
@@ -72,6 +68,52 @@
           </div>
         </div>
       </div>
+      <div v-if="$q.screen.width <= 855" class="row items-center header">
+        <div>
+          <router-link to="/">
+            <img class="logo" src="../assets/img/logo.png" />
+          </router-link>
+        </div>
+        <div class="signButtonGroup">
+          <q-fab
+            v-model="fab2"
+            vertical-actions-align="left"
+            color="grey"
+            padding="sm"
+            icon="keyboard_arrow_down"
+            direction="down"
+          >
+            <div class="mini-menu-panel">
+              <router-link class="mini-menu-title" to="our-services">
+                <p class="mini-menu text-black">Our Services</p>
+              </router-link>
+              <router-link class="mini-menu-title" to="/terms-conditions">
+                <p class="mini-menu text-black">Terms and Conditions</p>
+              </router-link>
+              <router-link class="mini-menu-title" to="/how-work">
+                <p class="mini-menu text-black">How We Work</p>
+              </router-link>
+              <router-link class="mini-menu-title" to="/translation">
+                <p class="mini-menu text-black">Translation</p>
+              </router-link>
+              <router-link class="mini-menu-title" to="translations">
+                <p class="mini-menu text-black">Contact Us</p>
+              </router-link>
+              <router-link class="mini-menu-title" to="/signin">
+                <p class="mini-menu text-black">Sign In</p>
+              </router-link>
+              <router-link class="mini-menu-title" to="/signup">
+                <p
+                  class="mini-menu text-black"
+                  style="border-bottom: 1px solid grey"
+                >
+                  Sign Up
+                </p>
+              </router-link>
+            </div>
+          </q-fab>
+        </div>
+      </div>
     </q-toolbar>
   </q-header>
 </template>
@@ -80,7 +122,7 @@ import { defineComponent } from "vue";
 import NoHoverButton from "src/components/common/NoHoverButton.vue";
 import { useAuthStore } from "stores/auth";
 import { storeToRefs } from "pinia";
-
+import { useQuasar } from "quasar";
 export default defineComponent({
   name: "HeaderSection",
   components: {
@@ -90,21 +132,16 @@ export default defineComponent({
   setup() {
     const authStore = useAuthStore();
     const { loggedIn } = storeToRefs(authStore);
+    const $q = useQuasar();
     return {
       loggedIn,
+      $q,
     };
   },
 });
 </script>
 
 <style scoped>
-.myBrand {
-  border: none;
-  background-color: white;
-}
-.myBrand:hover {
-  cursor: pointer;
-}
 .menuBar {
   margin-left: 20px;
   display: flex;
