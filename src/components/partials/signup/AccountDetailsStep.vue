@@ -131,7 +131,9 @@
           label="Facebook"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/facebook.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/facebook-new.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon name="close" @click="twitter = ''" class="cursor-pointer" />
@@ -147,7 +149,9 @@
           label="Twitter"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/twitter.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/twitter.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon name="close" @click="twitter = ''" class="cursor-pointer" />
@@ -163,7 +167,9 @@
           label="Instagram"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/instagram.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/instagram-new--v1.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon
@@ -183,7 +189,9 @@
           label="LinkedIn"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/linkedin.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/linkedin.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon
@@ -203,7 +211,9 @@
           label="SoundCloud"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/soundcloud.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/soundcloud.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon
@@ -223,7 +233,9 @@
           label="GoogleDriver"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/googledriver.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-google-drive-social-media-tanah-basah-glyph-tanah-basah.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon
@@ -237,7 +249,9 @@
         <!-- BEGIN: SnapChat -->
         <q-input filled bottom-slots type="url" v-model="tiktok" label="TikTok">
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/tiktok.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/tiktok--v1.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon name="close" @click="tiktok = ''" class="cursor-pointer" />
@@ -253,7 +267,9 @@
           label="snapchat"
         >
           <template v-slot:prepend>
-            <q-icon name="img:/assets/icons/snapchat.svg" />
+            <q-icon
+              name="img:https://img.icons8.com/ios-filled/50/snapchat--v1.png"
+            />
           </template>
           <template v-slot:append>
             <q-icon
