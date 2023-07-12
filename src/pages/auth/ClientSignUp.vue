@@ -116,6 +116,8 @@ import {
   sameAs,
 } from "@vuelidate/validators";
 import CustomLabel from "src/components/common/CustomLabel.vue";
+import { Api } from "../../api";
+import { apiSearch, registerUrl } from "../../api/auth";
 export default {
   name: "SignIn",
   components: {
@@ -150,13 +152,32 @@ export default {
       return vuelidate.value.$validate();
     }
     async function onSubmit() {
-      console.log(vuelidate.value);
       try {
         const valid = await validate();
         if (!valid) {
           return console.log("Form could not be submitted.");
         }
-        props.setPage(3);
+        const formData = {
+          email: form.email,
+          password: form.password,
+        };
+        Api.post(`http://localhost:2001/api/auth/signup`, formData)
+          .then(({ data }) => {
+            console.log("sss");
+            this.$notify({
+              group: "userNotification",
+              type: "success",
+              text: `${data.message.customer} has been added correctly!`,
+            });
+          })
+          .catch(() => {
+            this.$notify({
+              group: "userNotification",
+              type: "danger",
+              text: `The user wasn't registered correctly`,
+            });
+          })
+          .finally(() => {});
       } catch (error) {
         console.error("Login error");
       }
