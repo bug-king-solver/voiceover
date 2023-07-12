@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { getStoreItem, setStoreItem } from "src/services/localstorage.service";
 import { ref } from "vue";
 
 export const useAuthStore = defineStore({
@@ -6,8 +7,10 @@ export const useAuthStore = defineStore({
   state: () => ({
     // initialize state from local storage to enable user to stay logged in
     user: JSON.parse(localStorage.getItem("user")),
-    loggedIn: ref(false),
   }),
+  getters: {
+    loggedIn: (state) => !!state.access_token,
+  },
   actions: {
     login(username = "", password = "") {
       try {

@@ -3,21 +3,27 @@
   <q-step :name="1" title="Welcome to Voiceover" prefix="1" :done="step > 1">
     <div class="intro">
       <p>
-        For each ad campaign that you create, you can control how much you're
-        willing to spend on clicks and conversions, which networks and
-        geographical locations you want your ads to show on, and more. For each
-        ad campaign that you create, you can control how much you're willing to
-        spend on clicks and conversions, which networks and geographical
-        locations you want your ads to show on, and more. For each ad campaign
-        that you create, you can control how much you're willing to spend on
-        clicks and conversions, which networks and geographical locations you
-        want your ads to show on, and more. For each ad campaign that you
-        create, you can control how much you're willing to spend on clicks and
-        conversions, which networks and geographical locations you want your ads
-        to show on, and more.
+        Before proceeding with the sign-up process, please read and accept our
+        contract, policy, and terms and conditions. These documents outline the
+        expectations, rights, and responsibilities of both parties involved. It
+        is essential to understand and agree to these terms before registering
+        as a voiceover artist on our website.
       </p>
-      <q-toggle v-model="isAccept" label="Agree with our Policy." />
+      <p>
+        <a class="text-black" href=""> Contact Us </a>
+      </p>
+      <p>
+        <a class="text-black" href="/assets/pdf/Privacy Policy.pdf">
+          Privacy Policy
+        </a>
+      </p>
+      <p>
+        <a class="text-black" href="/assets/pdf/Terms and Conditions.pdf">
+          Terms and Conditions
+        </a>
+      </p>
 
+      <q-toggle v-model="isAccept" label="Accept" />
       <q-stepper-navigation>
         <q-btn
           @click="onNext(2)"
